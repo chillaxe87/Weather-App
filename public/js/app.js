@@ -5,13 +5,14 @@ const searchEl = document.querySelector('input')
 
 const forecastMessage = document.getElementById('forecast_message')
 const errorMessage = document.getElementById('error_message')
+const port = process.env.PORT || 3000
 
 weatherForm.addEventListener('submit', (event) => {
     event.preventDefault()
     const location = searchEl.value
     forecastMessage.innerHTML = ''
     errorMessage.innerHTML = 'Loading...'
-    fetch(`http://localhost:3000/weather?address=${location}`).then((res)=>{
+    fetch(`/weather?address=${location}`).then((res)=>{
     res.json().then((data) =>{
         if(data.error){
             errorMessage.innerHTML = data.error 
