@@ -5,7 +5,6 @@ const searchEl = document.querySelector('input')
 
 const forecastMessage = document.getElementById('forecast_message')
 const errorMessage = document.getElementById('error_message')
-const port = process.env.PORT || 3000
 
 weatherForm.addEventListener('submit', (event) => {
     event.preventDefault()
